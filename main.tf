@@ -59,7 +59,7 @@ data "aws_subnets" "default" {
 
 resource "aws_lb" "example" {
     name                = "terraform-asg-example"
-    load_balancer_type = "application"
+    load_balancer_type = "application"                  # Defines the ALB
     subnets             = data.aws_subnets.default.ids
     security_groups     = [aws_security_group.alb.id]
 }
